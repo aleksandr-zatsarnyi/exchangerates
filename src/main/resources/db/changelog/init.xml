@@ -1,0 +1,19 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <changeSet id="create exchange_rate" author="aleksandr">
+        <createTable tableName="exchange_rate">
+            <column name="id" type="uuid">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="target_currency" type="varchar(3)"/>
+            <column name="base_currency" type="varchar(3)"/>
+            <column name="date_of_create" type="datetime"/>
+            <column name="rate_buy" type="double"/>
+            <column name="rate_sell" type="double"/>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>
