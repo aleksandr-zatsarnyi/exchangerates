@@ -63,15 +63,13 @@ public class ExchangeRateServiceTest {
 
     @Test
     public void testGetAverageExchangeRatesByPeriodThrowsExceptionOnInvalidDateFormat() {
-        Assertions.assertThrows(IllegalArgumentException.class, () -> {
-            service.getAverageExchangeRatesByPeriod("2023-05-01", "2023-05-10");
-        });
+        Assertions.assertThrows(IllegalArgumentException.class, () ->
+                service.getAverageExchangeRatesByPeriod("2023-05-01", "2023-05-10"));
     }
 
     @Test
     public void testGetAverageExchangeRatesByPeriodThrowsExceptionOnEndDateBeforeStartDate() {
-        Assertions.assertThrows(IllegalArgumentException.class, () -> {
-            service.getAverageExchangeRatesByPeriod("2023-05-10T00:00:00.000Z", "2023-05-01T23:59.000Z");
-        });
+        Assertions.assertThrows(IllegalArgumentException.class, () ->
+                service.getAverageExchangeRatesByPeriod("2023-05-10T00:00:00.000Z", "2023-05-01T23:59.000Z"));
     }
 }

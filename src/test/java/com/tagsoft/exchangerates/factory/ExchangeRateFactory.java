@@ -2,14 +2,11 @@ package com.tagsoft.exchangerates.factory;
 
 import com.github.javafaker.Faker;
 import com.tagsoft.exchangerates.domain.ExchangeRate;
-import com.tagsoft.exchangerates.dto.ExchangeAverageRate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.time.*;
 import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
-import java.util.Collection;
 
 @Component
 public class ExchangeRateFactory {
@@ -21,16 +18,6 @@ public class ExchangeRateFactory {
         ExchangeRate exchangeRate = new ExchangeRate();
         exchangeRate.setTargetCurrency(faker.currency().code());
         exchangeRate.setBaseCurrency(faker.currency().code());
-        exchangeRate.setRateBuy(faker.number().randomDouble(4, 0, 1000));
-        exchangeRate.setRateSell(faker.number().randomDouble(4, 0, 1000));
-        exchangeRate.setDateOfCreate(Instant.now());
-        return exchangeRate;
-    }
-
-    public ExchangeRate createExchangeRate(String baseCurrency, String targetCurrency) {
-        ExchangeRate exchangeRate = new ExchangeRate();
-        exchangeRate.setTargetCurrency(targetCurrency);
-        exchangeRate.setBaseCurrency(baseCurrency);
         exchangeRate.setRateBuy(faker.number().randomDouble(4, 0, 1000));
         exchangeRate.setRateSell(faker.number().randomDouble(4, 0, 1000));
         exchangeRate.setDateOfCreate(Instant.now());
