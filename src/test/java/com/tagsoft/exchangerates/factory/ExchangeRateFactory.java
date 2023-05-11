@@ -50,24 +50,4 @@ public class ExchangeRateFactory {
 
         return exchangeRate;
     }
-
-    public Collection<ExchangeAverageRate> createExchangeAverageRate() {
-        Collection<ExchangeAverageRate> exchangeAverageRates = new ArrayList<>();
-        exchangeAverageRates.add(new ExchangeAverageRate(
-                faker.currency().code(),
-                faker.currency().code(),
-                faker.number().randomDouble(4, 0, 1000),
-                faker.number().randomDouble(4, 0, 1000)));
-        exchangeAverageRates.add(new ExchangeAverageRate(
-                faker.currency().code(),
-                faker.currency().code(), faker.number().
-                randomDouble(4, 0, 1000),
-                faker.number().randomDouble(4, 0, 1000)));
-        exchangeAverageRates.add(new ExchangeAverageRate(faker.currency().code(),
-                faker.currency().code(),
-                faker.number().randomDouble(4, 0, 1000),
-                faker.number().randomDouble(4, 0, 1000)));
-
-        return exchangeAverageRates;
-    }
 }
